@@ -1,6 +1,6 @@
 #!/bin/bash
 
-docker build -t stringer .
+docker build -t antonlindstrom/stringer .
 
 docker run --name stringer_db -d postgres:9.3
 
