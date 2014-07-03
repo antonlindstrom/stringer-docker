@@ -4,7 +4,7 @@ docker build -t antonlindstrom/stringer .
 docker run --name stringer_db -d postgres:9.3
 
 sleep 10
-export DB_PASSWORD=$(openssl rand -hex 20)
+export DB_PASSWORD=197f15c2e26a6f6b25e8
 
 connect='exec psql -h "$POSTGRES_PORT_5432_TCP_ADDR" -U postgres -c '
 

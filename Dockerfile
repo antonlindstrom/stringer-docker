@@ -14,13 +14,13 @@ RUN gem install foreman --no-ri --no-rdoc
 RUN git clone git://github.com/antonlindstrom/stringer.git /stringer
 
 ENV RACK_ENV "production"
-ENV STRINGER_DATABASE "stringer_live"
+ENV STRINGER_DATABASE "stringerdb"
 
 WORKDIR /stringer
 
 RUN sed -i 's/^ruby "2.0.0"/ruby "2.1.2"/' Gemfile
 RUN sed -i 's/^console/#console/' Procfile
-RUN echo "worker: bundle exec rake fetch_feeds_worker >> Procfile"
+RUN echo "clock: bundle exec rake fetch_feeds_worker" >> Procfile
 
 RUN bundle install
 
