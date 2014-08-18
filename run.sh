@@ -24,5 +24,7 @@ export STRINGER_DATABASE_PORT=$POSTGRES_PORT_5432_TCP_PORT
 export RACK_ENV="production"
 export SECRET_TOKEN=$(openssl rand -hex 20)
 
+cd /stringer
+
 rake db:migrate
 bundle exec foreman start
