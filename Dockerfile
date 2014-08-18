@@ -27,4 +27,4 @@ RUN bundle install
 EXPOSE 5000
 
 ADD ./run.sh /stringer/run.sh
-CMD bash ./run.sh
+CMD bash /stringer/run.sh
