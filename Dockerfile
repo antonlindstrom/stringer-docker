@@ -20,7 +20,6 @@ WORKDIR /stringer
 
 RUN sed -i 's/^ruby "2.0.0"/ruby "2.1.2"/' Gemfile
 RUN sed -i 's/^console/#console/' Procfile
-RUN sed -i 's/\$PORT/5000/' Procfile
 
 RUN echo "clock: bundle exec rake fetch_feeds_worker" >> Procfile
 
